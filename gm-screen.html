@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./css/talisman-screen.css">
+    <script src="jq.js"></script>
+    <script src="gm-screen.js"></script>
+</head>
+
+<body>
+    <nav class="main-nav">
+        <ul class="flex row">
+            <li class="flex grow flex-center"><a class="nav-link" data-page="combat">COMBAT</a></li>
+            <li class="flex grow flex-center"><a class="nav-link" data-page="general">GENERAL</a></li>
+            <li class="flex grow flex-center"><a class="nav-link" data-page="healing">REST & HEALING</a></li>
+        </ul>
+    </nav>
+    <div class="main-wrapper">
+        <div class="sheet-body flex row">
+            <section class="player-actions flex row sheet-page" id="combat">
+                <div class="player-actions-list flex column">
+                    <h2>ACTIONS</h2>
+                    <a class="player-action" data-content="cont-melee">ATTACT MELEE</a>
+                    <a class="player-action" data-content="cont-range">ATTACT RANGE</a>
+                    <a class="player-action" data-content="cont-psychic">ATTACT PSYCHIC</h1>
+                        <a class="player-action" data-content="cont-spell">CAST SPELL</a>
+                        <a class="player-action" data-content="cont-assist">ASSIST</h1>
+                            <a class="player-action" data-content="cont-defend">DEFEND</h1>
+                                <a class="player-action" data-content="cont-protect">PROTECT</a>
+                                <a class="player-action" data-content="cont-disengage">DISENGAGE</a>
+                                <a class="player-action" data-content="cont-recover">RECOVERY</a>
+                </div>
+                <div id="action-description">...</div>
+                <span>
+                    <div id="cont-melee" class="content-player-action">
+                        <h2>Attack Melee</h2>
+                        <p><strong>Damage </strong>: Weapon Skill: <br /><strong>Melee </strong>(Brawn, Agility)</p>
+                        <p><strong>Failure</strong>: inflict no damage, recieve full damage</p>
+                        <p><strong>Standard Success:</strong> You hit your target for full damage, but your opponent
+                            hits
+                            you
+                            for half damage.</p>
+                        <p><strong>Great Success</strong>: You inflict full damage on your target, and your opponent
+                            does
+                            not
+                            get an action.&nbsp;</p>
+                        <p><strong>Extraordinary Success</strong>: Your attack is a complete success +</p>
+                        <ul>
+                            <li>add 1d6 damage,</li>
+                            <li>knock down your opponent,</li>
+                            <li>stun your opponent, or</li>
+                            <li>inflict 1 Wound.</li>
+                        </ul>
+                    </div>
+                    <div id="cont-range" class="content-player-action">
+                        <h2>Range Attack</h2>
+                        <p><strong>Damage </strong>: Weapon <br /><strong>Skill</strong>: Missile/Throw(Brawn, Agility)
+                        </p>
+                        <p><strong>Failure: </strong>You do not harm your target, and :</p>
+                        <ul>
+                            <li>an opponent with a ranged attack strikes you for full damage,</li>
+                            <li>an opponent with a ranged attack fires at one of your allies (and that character or NPC
+                                must
+                                make a defence test),</li>
+                            <li>an opponent within melee range strikes you for maximum damage, or</li>
+                            <li>you lose 1d3 additional ammo.&nbsp;</li>
+                        </ul>
+                        <p><strong>Standard Success: </strong>You strike your target for full damage, but:</p>
+                        <ul>
+                            <li>an opponent with a ranged attack strikes you for half damage,&nbsp;</li>
+                            <li>an opponent with a ranged attack fires at one of your allies (and that character or NPC
+                                must
+                                make a defence test),</li>
+                            <li>an opponent within melee range strikes you for full damage, or</li>
+                            <li>you lose one additional ammo.&nbsp;</li>
+                        </ul>
+                        <p><strong>Great Success: </strong>You inflict full damage on your target.</p>
+                        <p><strong>Extraordinary Success: </strong>Your attack is a complete success. +:</p>
+                        <ul>
+                            <li>add 1d6 damage,&nbsp; &bull; knock down your opponent,&nbsp;</li>
+                            <li>stun your opponent,&nbsp;</li>
+                            <li>inflict 1 Wound,</li>
+                            <li>you have an opportunity for a special effect, such as pinning your opponent.</li>
+                        </ul>
+                    </div>
+                    <div id="cont-psychic" class="content-player-action">
+                        <h2>Psychic Attack</h2>
+                        <p><strong>Damage </strong>: 1D6 <br /><strong>Skill</strong>: Psychic</p>
+                        <p>Any character can initiate a psychic attack against an Enemy with the Incorporeal benefit.
+                            Additionally, characters with the Psychic Assault Special Ability can initiate a psychic
+                            attack
+                            against anyone. Psychic attacks always ignore armour.</p>
+                        <p><strong>Failure</strong>: You do not harm your target, and: &nbsp;</p>
+                        <ul>
+                            <li>an opponent inflicts psychic damage on you, or</li>
+                            <li>an opponent with a ranged or melee attack strikes you for full damage, or&nbsp;</li>
+                            <li>an opponent with a ranged attack fires at one of your allies (and that character or NPC
+                                must
+                                make a defence test).&nbsp; Either way, you suffer disorientation from the psychic
+                                effort,
+                                and
+                                all your psychic attacks have a &minus;2 penalty until you take a short rest;
+                                disorientation
+                                penalties are cumulative.&nbsp;</li>
+                        </ul>
+                        <p><strong>Standard Success</strong>: You strike your target for full damage, but:</p>
+                        <ul>
+                            <li>an opponent inflicts half psychic damage on you,</li>
+                            <li>an opponent with a ranged or melee attack strikes you for half damage,&nbsp;</li>
+                            <li>an opponent with a ranged attack fires at one of your allies (and that character or NPC
+                                must
+                                make a defence test). Either way, you suffer disorientation from the psychic effort, and
+                                all
+                                your psychic attacks have a &minus;1 penalty until you take a short rest; disorientation
+                                penalties are cumulative.&nbsp;</li>
+                        </ul>
+                        <p><strong>Great Success</strong>: Your attack is a complete success.&nbsp;</p>
+                        <p><strong>Extraordinary Success</strong>: Your attack is a complete success. +:&nbsp;</p>
+                        <ul>
+                            <li>add 1d6 damage,</li>
+                            <li>stun your opponent,</li>
+                            <li>prevent your opponent from using psychic attacks for 1d6 rounds, or</li>
+                            <li>inflict 1 Wound.</li>
+                        </ul>
+                    </div>
+                    <div id="cont-spell" class="content-player-action">
+                        <h2>Cast Spell</h2>
+                        <p><strong>Skill</strong>: Spellcasting test.</p>
+                        <p><strong>Failure</strong>: The spell does not take effect, but the caster must spend spell
+                            points(s)
+                            or lose memory of the spell.&nbsp;</p>
+                        <p><strong>Standard Success:</strong> The spell takes effect, but there&rsquo;s a complication
+                            determined by the Game Master:</p>
+                        <ul>
+                            <li>You must spend one extra spell point; otherwise, you&rsquo;re &ldquo;strained&rdquo; by
+                                spellcasting, suffering a &minus;2 penalty to all Spellcasting tests until you have a
+                                short
+                                rest. Penalties from strain effects are cumulative.</li>
+                            <li>You&rsquo;re placed in danger and suffer the full effects of an attack from an Enemy
+                                (either
+                                an
+                                Enemy with a missile weapon or a spellcaster).&nbsp;</li>
+                            <li>Your spell is only partially successful (e.g., target takes half damage, or the spell
+                                has
+                                half
+                                duration).&nbsp;</li>
+                        </ul>
+                        <p><strong>Great Success</strong>: Your spell takes full effect with no side effects.&nbsp;</p>
+                        <p><strong>Extraordinary Success</strong>: The spell takes full effect with no side effects +:
+                        </p>
+                        <ul>
+                            <li>If you have become strained from spellcasting, you can remove the penalty for one
+                                strained
+                                effect.</li>
+                            <li>The spell point cost is decreased by 1.</li>
+                            <li>The spell effect increases in some way as determined by the GM (such as increased damage
+                                or
+                                effect area).</li>
+                        </ul>
+                    </div>
+                    <div id="cont-assist" class="content-player-action">
+                        <h2>Assist</h2>
+                        <p>Assist by using a skill.</p>
+                        <p><strong>Roll 1d6</strong>. if the result is <strong>&lt;=</strong> than your skill you can
+                            give
+                            the
+                            die result to the assisted character.</p>
+                        <p><em>(A melee warrior cannot assist an archer who is attacking an Enemy that&rsquo;s out of
+                                range)
+                            </em></p>
+                        <p>If multiple people assisting only the highest assist roll is used as a bonus.</p>
+                    </div>
+                    <div id="cont-defend" class="content-player-action">
+                        <h2>Defend</h2>
+                        <p>You can only take defence tests with&nbsp; +4 against melee/range attacks</p>
+                    </div>
+                    <div id="cont-protect" class="content-player-action">
+                        <h2>Protect</h2>
+                        <p>Full action and usually requires a Melee (Agility) test, although other (creative)
+                            alternatives
+                            are
+                            possible.<br />If you&rsquo;re attempting to protect another character that is involved in
+                            melee,
+                            you must declare your protect action before that character is attacked; its effects last
+                            until
+                            your
+                            next action.</p>
+                        <p><strong>Failure</strong>: You fail to protect the other character.</p>
+                        <p><strong>Standard Success</strong>: You can halve the damage from one attack on the character
+                            you
+                            are
+                            protecting, or you can protect them from all damage and take the full amount of damage
+                            yourself.&nbsp;</p>
+                        <p><strong>Great Success</strong>: You block all the damage from one incoming attack on the
+                            person
+                            you
+                            are protecting.&nbsp;</p>
+                        <p><strong>Extraordinary Success</strong>: You block all damage from one incoming attack on the
+                            person
+                            you are protecting. The GM may allow an additional effect, such as&nbsp; causing the
+                            attacker
+                            half
+                            damage.</p>
+                    </div>
+                    <div id="cont-disengage" class="content-player-action">
+                        <h2>Disengage</h2>
+                        <p><strong>Athletics (Agility)</strong> test against a difficulty equal to the
+                            <strong>Enemy&rsquo;s
+                                Threat;</strong>&nbsp;</p>
+                        <p><strong>Failure</strong>: You do not disengage, and you take full damage from your
+                            opponent.&nbsp;
+                        </p>
+                        <p><strong>Standard Success</strong>: You can disengage and move up to half your Speed, but you
+                            cannot
+                            take another full action that turn. Your opponent strikes you for half damage.&nbsp;</p>
+                        <p><strong>Great Success or better</strong>: You disengage without harm; you can then take an
+                            action
+                            and/or move.</p>
+                    </div>
+                    <div id="cont-recover" class="content-player-action">
+                        <h2>Recovery</h2>
+                        <p>You can attempt a recover action to restore lost Life. <br />When making a recover action,
+                            <strong>you can take no other action</strong>, but you can make a <strong>defence
+                                test</strong>
+                            when
+                            you are attacked.</p>
+                        <ul>
+                            <li>You can take a number of recover actions each day equal to your
+                                <strong>Resolve</strong>.
+                                This
+                                resets when you take a <strong>full rest</strong>.</li>
+                            <li>If you have taken any <strong>Wounds</strong>, you cannot take a recover action.</li>
+                            <li>If a recover action is taken during a combat, you must make a <strong>Fortitude
+                                    (Mettle)</strong> test against <strong>Difficulty 14</strong>.
+                                <ul>
+                                    <li><strong>Failure</strong>: You do not recover any Life.</li>
+                                    <li><strong>Standard Success</strong>: Recover <strong>1d3</strong> Life.</li>
+                                    <li><strong>Great Success</strong>: Recover <strong>1d6</strong> Life.</li>
+                                    <li><strong>Extraordinary Success</strong>: Recover <strong>1d6+3</strong> Life.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <p>A recover action taken during a <strong>short rest</strong> requires no roll and is
+                            automatically
+                            a
+                            <strong>Great Success</strong>.</p>
+                    </div>
+                </span>
+                <div class="padded size12">
+                    <h3>Armor Repairing</h3>
+                    <p>You&rsquo;ll need at least <strong>one hour</strong> + <strong>proper equipment </strong>(which
+                        might include a forge for heavy armour) + <strong>one armour repair
+                            kit</strong>.<br /><strong>Tinker (Agility) test</strong>. The <strong>Difficulty</strong> =
+                        <strong>8 + (the number of armour points that need to be repaired)</strong>.</p>
+                    <ul>
+                        <li><strong>Failure</strong>: No armour points are restored, and the armour kit is used.</li>
+                        <li><strong>Standard Success</strong>: Restore <strong>1d6</strong> armour points; the armour
+                            kit is used.</li>
+                        <li><strong>Great Success</strong>: You restore <strong>2d6</strong> armour points and the
+                            <strong>armour kit</strong> is used, <strong>or</strong> you restore <strong>1d6</strong>
+                            armour points and the <strong>armour kit is not used</strong>.</li>
+                        <li><strong>Extraordinary Success</strong>: Restore <strong>2d6</strong> armour points;
+                            the<strong> armour kit is not used</strong>.</li>
+                    </ul>
+                    <hr>
+                    <h3>Shields</h3>
+                    <p>+2 bonus to defence or protect test.</p>
+                    <p>After an attack or defence test is made but before the GM rolls damage, you can declare that your
+                        shield is taking the hit. Roll <strong>1d6</strong>. If you <strong>roll a 5 or 6, the shield is
+                            still intact</strong>; if you roll a <strong>1&ndash;4, the shield is destroyed</strong>.
+                        Either way, the shield absorbs the damage.</p>
+                    <p>If the damage inflicted from a single source is higher than the listed armor amount on the
+                        shield, the shield only blocks that amount and then automatically breaks.</p>
+                    <hr>
+                    <h3>Helmets</h3>
+                    <p>If a melee or missile attack would reduce you to zero (0) Life, you can take the blow on the helm
+                        and take no damage. After the GM rolls damage, if the attack would reduce you to zero (0) Life,
+                        you can declare that you are taking the hit on your helm. <strong>Roll 1d6</strong>. <strong>6 =
+                        </strong>helm remains intact. <strong>1&ndash;5 = </strong>helm is destroyed.&nbsp;</p>
+                    <p><strong> &minus;2 penalty</strong> to all <strong>Notice tests</strong> while wearing the helm.
+                    </p>
+                    <hr>
+                    <h3>Movement</h3>
+                    <p>Free action to move, or full action to sprint (movement x 3)</p>
+                    <hr>
+                    <h3>Surprise And Ambush pg. 38</h3>
+                </div>
+            </section>
+            <section class="sheet-page" id="general">
+                <div class="flex row">
+                    <img src="img/difficulty.png" width="374px" height="231px">
+                    <img src="img/fate-spend.png" width="375px" height="282px">
+                </div>
+                <div class="grid">
+                    <div class="size12">
+                        <h2>Light Fate</h2>
+                        <p>The <strong>maximum= character&rsquo;s level + 2</strong>. <br />If you roll a
+                            <strong>6</strong>
+                            on the <strong>Kismet Die</strong> while at maximum, you can spend that
+                            earned Fate immediately.</p>
+                        <p>You begin each session with 1 Light Fate.</p>
+                        <p>Spend Fate to affect a roll, activate special ability if the roll is successful or s part of
+                            a
+                            spell or when activating the Special Quality of a magic item.<br /><em>You can spend Light
+                                Fate
+                                once for any given opportunity</em></p>
+                        <ul class="size12">
+                            <li>Add a <strong>bonus die</strong></li>
+                            <li>After you roll for a test, you can spend to <strong>reroll</strong> one of the dice, but
+                                you
+                                must keep the new result. (You cannot do this if you spent Fate to add to the roll.)
+                            </li>
+                            <li>Spend to increase a <strong>Standard Success to a Great Success</strong>. You cannot do
+                                this
+                                if you have already spent Fate to modify the die roll</li>
+                            <li>Spend to activate one of your <strong>Special Abilities</strong>.</li>
+                            <li>Spend to activate an item&rsquo;s <strong>Special Quality</strong>.</li>
+                            <li>Some spells require expenditure.</li>
+                            <li>When you <strong>fail a death test</strong> spending Fate means that you pass the test
+                                for
+                                <strong>that round</strong>.</li>
+                        </ul>
+                    </div>
+                    <div class="size12">
+                        <div>
+                            <h2>Dark Fate</h2>
+                            <p>The Game Master begins the session with <strong>1 Dark Fate token for each
+                                    player</strong>.
+                                Maximum Dark Fate = num. of players *&nbsp; 2 + the level of the highestlevel character.
+                            </p>
+                            <ul>
+                                <li>Spend to increase an <strong>Enemy&rsquo;s Threat rating by 1d6 for one
+                                        round</strong>.
+                                    This must be done at the beginning of the round and can&rsquo;t be done as a
+                                    reaction to
+                                    a character attacking that Enemy.</li>
+                                <li>The Game Master can spend to activate an Enemy&rsquo;s Special Ability. Unless a
+                                    Special
+                                    Ability specifically states otherwise, the <strong>use of a Special Ability replaces
+                                        an
+                                        Enemy&rsquo;s normal attack</strong>.</li>
+                                <li>The Game Master can spend to activate effects in special areas</li>
+                                <li>The Game Master can spend to activate an item&rsquo;s curse effects (listed under
+                                    Special Qualities).</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+            <section class="sheet-page grid" id="healing">
+                <div class='wounds-section size12'>
+                    <h2>Wounds</h2>
+                    <p><strong>Max wounds</strong> = <strong>Mettle</strong> or <strong>Resolve </strong>(whichever is
+                        higher).</p>
+                    <p>You remain <strong>unconscious </strong>until one of the wounds is healed, even if your Life is
+                        fully restored. Wounds can only be healed through<strong> natural healing</strong>,
+                        <strong>first aid</strong>, or <strong>magical effects</strong>.</p>
+                    <h3>Death and Dying</h3>
+                    <p>When you reach zero (0) Life, your character is unconscious and on the verge of death. Each round
+                        after this happens, you must make a death test to see if your character is still alive. This is
+                        a <strong>Difficulty 8 test</strong> using <strong>Mettle or Resolve</strong> (whichever is
+                        higher); each additional round after the first, the Difficulty increases by 1.</p>
+                    <ul>
+                        <li>General Succes and <strong>6 on the Kismet Die</strong> you stabilize and awaken on your own
+                            after 1 minute with 1 Life.</li>
+                        <li>If you fail this test, your character is dead.</li>
+                    </ul>
+                    <p>If neither condition is met, you&rsquo;re still dying.</p>
+                    <p>Any kind of <strong>healing spell</strong> or <strong>magical effect</strong> immediately
+                        <strong>stabilises</strong> a dying character, or a <strong>Heal (Insight) test against
+                            Difficulty 14</strong>.</p>
+                </div>
+                <div class="rest-section size12">
+                    <h2>Short Rest (15 min)</h2>
+                    <h3>First Aid</h3>
+                    <p>Restore life and might heal Wounds they&rsquo;ve suffered within the last hour. (You cannot use
+                        first aid on yourself). Only one attempt per person after combat.</p>
+                    <p><strong>Healing (Insight) </strong>testagainst <strong>Difficulty 14</strong>.</p>
+                    <ul>
+                        <li><strong>Failure:</strong> No Life is restored.</li>
+                        <li><strong>Success</strong>: The target heals 1d6 Life.</li>
+                        <li><strong>Great Success</strong>: The target heals 2d6 Life, or the target heals 1d6 Life and
+                            1 Wound.</li>
+                        <li><strong>Extraordinary Success</strong>: The target heals 2d6 Life and 1 Wound.</li>
+                    </ul>
+                    <h3>Refitting Armour</h3>
+                    <p>Remove slashes (/)</p>
+                    <h3>Recovering Life</h3>
+                    <p>One recover action. Same as&nbsp; combat action (and counts against the total you can make in a
+                        day) but it is automatically a Great Success, restoring <strong>1d6 Life</strong>.</p>
+                    <h3>Recovering Spell Points</h3>
+                    <p>Roll <strong>1d6</strong>; you recover that number of spell points. You can do this once per
+                        short rest.</p>
+                    <hr>
+                    <h2>Long Rest</h2>
+<p><strong>Eight hours </strong>of uninterrupted rest, <strong>six hours of sleep</strong>. <strong>One long rest per 24-hour</strong> period. After a long rest, <strong>all lost Life and all spell points are recovered</strong>. However, <strong>Wounds are not recovered;</strong> (first aid, natural healing, or magical means).</p>
+<h3>Natural Healing</h3>
+<p>Once per day, attempt to heal 1<strong> Wound</strong> after taking a <strong>long rest.</strong><br /><strong>Fortitude (Mettle) test against Difficulty 14</strong>; you must get a Great Success or better. The <strong>Difficulty </strong>for this test is <strong>reduced by 2</strong> for each day you don&rsquo;t succeed.</p>
+<h3>Tending to Wounds</h3>
+<p><strong>Heal (Insight) test against Difficulty 14</strong>;</p>
+<ul>
+<li><strong>Standard Success</strong> or better on the test, the character you&rsquo;re tending gets a +2 bonus to their natural healing test.</li>
+<li><strong>Great Success or better</strong>, the character you&rsquo;re tending can increase a Standard Success on a natural healing test to a Great Success. You can tend to multiple characters during a long rest, although the difficulty is increased by 2 for each additional character tended.</li>
+</ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>

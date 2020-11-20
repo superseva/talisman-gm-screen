@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+.flex {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.half {
+  flex: 0 0 50%;
+}
+
+.center {
+  text-align: center;
+}
+
+.margin {
+  margin: 5px;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.space-around {
+  justify-content: space-around;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.f1 {
+  flex: 1;
+}
+
+.f2 {
+  flex: 2;
+}
+
+.f3 {
+  flex: 3;
+}
+
+.size10 {
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.size12 {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.size14 {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.size16 {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.grid-3col {
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-4col {
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.grid-5col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-6col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-7col {
+  grid-column: span 7 / span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.grid-8col {
+  grid-column: span 8 / span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+.grid-9col {
+  grid-column: span 9 / span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+.grid-10col {
+  grid-column: span 10 / span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.grid-11col {
+  grid-column: span 11 / span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+.grid-12col {
+  grid-column: span 12 / span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+.flex-group-left {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.flex-group-right {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Serif", serif;
+  background-color: bisque;
+}
+
+body p,
+body h2,
+body h3,
+body ul {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h2,
+h3 {
+  color: darkred;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  text-shadow: chocolate 1px 0 5px;
+}
+
+.nav-link {
+  font-weight: bold;
+}
+
+.size11 {
+  font-size: 11px;
+}
+
+.size12 {
+  font-size: 12px;
+}
+
+.padded {
+  padding: 5px;
+}
+
+.main-nav {
+  max-width: 1020px;
+}
+
+.main-wrapper {
+  width: 1020px;
+  height: 700px;
+  padding: 5px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.main-wrapper .sheet-body {
+  height: 700px;
+  position: relative;
+}
+
+.main-wrapper .sheet-page {
+  width: 1000px;
+  min-width: 1000px;
+  float: left;
+}
+
+.main-wrapper section {
+  border: 1px solid;
+  padding: 5px;
+  margin: 0 5px 5px;
+}
+
+.main-wrapper .player-actions .player-actions-list {
+  padding: 5px;
+  min-width: 130px;
+  font-size: 12px;
+}
+
+.main-wrapper .player-actions .player-action {
+  cursor: pointer;
+  font-size: 1.2em;
+  margin: 2px 0 2px 0;
+}
+
+.main-wrapper .player-actions .player-action:hover {
+  text-shadow: chocolate 1px 0 5px;
+}
+
+.main-wrapper .player-actions .content-player-action {
+  display: none;
+}
+
+.main-wrapper .player-actions #action-description {
+  padding: 10px;
+  width: 400px;
+  max-width: 400px;
+  min-width: 400px;
+  font-size: 12px;
+  background-color: blanchedalmond;
+}
+
+.main-wrapper .player-actions #action-description h2 {
+  margin-top: 0px;
+}
+/*# sourceMappingURL=talisman-screen.css.map */

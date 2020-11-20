@@ -1,0 +1,98 @@
+@import "common";
+@import "grid";
+@import "flex";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap");
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif", serif;
+    background-color: bisque;
+    p,
+    h2,
+    h3,
+    ul {
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+}
+h2,
+h3 {
+    color: darkred;
+}
+a {
+    cursor: pointer;
+    &:hover {
+        text-shadow: chocolate 1px 0 5px;
+    }
+}
+.nav-link {
+    font-weight: bold;
+}
+.size11 {
+    font-size: 11px;
+}
+.size12 {
+    font-size: 12px;
+}
+.padded {
+    padding: 5px;
+}
+
+.main-nav {
+    max-width: 1020px;
+}
+.main-wrapper {
+    width: 1020px;
+    height: 700px;
+    padding: 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .sheet-body {
+        //width: 2200px;
+        height: 700px;
+        position: relative;
+    }
+    .sheet-page {
+        width: 1000px;
+        min-width: 1000px;
+        float: left;
+    }
+
+    section {
+        border: 1px solid;
+        padding: 5px;
+        margin: 0 5px 5px;
+    }
+
+    .player-actions {
+        .player-actions-list {
+            padding: 5px;
+            min-width: 130px;
+            font-size: 12px;
+        }
+        .player-action {
+            cursor: pointer;
+            font-size: 1.2em;
+            margin: 2px 0 2px 0;
+            &:hover {
+                text-shadow: chocolate 1px 0 5px;
+            }
+        }
+        .content-player-action {
+            display: none;
+        }
+        #action-description {
+            h2 {
+                margin-top: 0px;
+            }
+            padding: 10px;
+            width: 400px;
+            max-width: 400px;
+            min-width: 400px;
+            font-size: 12px;
+            background-color: blanchedalmond;
+        }
+    }
+}
